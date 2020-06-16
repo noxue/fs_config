@@ -58,7 +58,7 @@ mv conf/dialplan/default.xml conf/dialplan/default.xml.bak
 
 ## 安装后的配置部分
 
-### 修改密码
+### 修改密码(上面代码中已经做了，这里只是说明一下)
 
  FreeSWITCH的默认密码为1234，客户端使用该密码拨号时，会有10秒的延时。通过修改此默认密码，可以避免这个延时。
  如把新密码设为2345，此时可以把 `conf` 目录下的 `vars.xml` 中的：
