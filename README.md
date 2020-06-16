@@ -1,6 +1,4 @@
-# 配置 freeswitch1.6.2 教程
-
-安装部分参考了 https://www.cnblogs.com/whf191/p/12320482.html
+# CentOs7 配置 freeswitch1.6.2 教程
 
 ## 所有命令：
 ===================
@@ -9,6 +7,7 @@
 yum update update  -y
 yum groupinstall "开发工具"  -y
 yum install zlib-de* libjpeg-de*  sqlite*   epel-re*  libcurl* pcre-de*  speex* libldns*  libedit* openssl* lua*  libsndfile*  yasm* -y
+#这个文件下载很慢，可以迅雷下载之后，上传到服务器，再继续后续命令
 wget https://files.freeswitch.org/releases/freeswitch/freeswitch-1.6.2.tar.gz
 tar xvf  freeswitch-1.6.2.tar.gz 
 cd freeswitch-1.6.2
@@ -144,7 +143,7 @@ done
 ```
 
 
-# 网关配置相关
+# 网关配置相关（杭州三汇网关）
 
 
 ## 配置过程
