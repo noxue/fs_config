@@ -1,7 +1,6 @@
 # CentOs7 配置 freeswitch1.6.2 教程
 
-## 所有命令：
-===================
+## CentOs7 安装 freeswitch1.6.2
 
 ```bash
 yum update update  -y
@@ -44,14 +43,6 @@ mv conf/sip_profiles/external-ipv6.xml conf/sip_profiles/external-ipv6.xml.bk
 #make cd-sounds-install
 #make cd-moh-install
 
-#修改默认密码
-sed -i 's/\(default_password=\)[^"]*/\1fs12345/g' conf/vars.xml
-
-#配置卡线拨打
-mv conf/dialplan/public.xml conf/dialplan/public.xml.bak
-mv conf/dialplan/default.xml conf/dialplan/default.xml.bak
-
-
 
 ```
 
@@ -69,6 +60,14 @@ mv conf/dialplan/default.xml conf/dialplan/default.xml.bak
 
  `<X-PRE-PROCESS cmd="set" data="default_password=2345"/> `
 
+```bash
+#修改默认密码为 fs123456
+sed -i 's/\(default_password=\)[^"]*/\1fs123456/g' conf/vars.xml
+
+#配置卡线拨打
+mv conf/dialplan/public.xml conf/dialplan/public.xml.bak
+mv conf/dialplan/default.xml conf/dialplan/default.xml.bak
+```
 
 ## 配置卡线拨打电话
 
