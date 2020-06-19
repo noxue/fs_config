@@ -3,7 +3,7 @@
 ## CentOs7 安装 freeswitch1.6.2
 
 ```bash
-yum update update  -y
+yum update -y
 yum groupinstall "开发工具"  -y
 yum install zlib-de* libjpeg-de*  sqlite*   epel-re*  libcurl* pcre-de*  speex* libldns*  libedit* openssl* lua*  libsndfile*  yasm* -y
 #这个文件下载很慢，可以迅雷下载之后，上传到服务器，再继续后续命令
