@@ -133,13 +133,22 @@ default.xml 内容替换成下面的内容
 cp /usr/local/freeswitch/conf/directory/default/1000.xml /usr/local/freeswitch/conf/directory/default/2000.xml
 sed -i 's/1000/2000/g' 2000.xml
 
-#循环添加多个账号，下面是添加账号 2000~2032
-for i in $(seq 2000 2032); 
+#循环添加多个账号，下面是添加账号 2000~2032 密码随机
+
+for i in $(seq 2002 2032); 
 do 
-/bin/cp -f /usr/local/freeswitch/conf/directory/default/1000.xml /usr/local/freeswitch/conf/directory/default/$i.xml; 
-sed -i "s/1000/$i/g" $i.xml; 
+	/bin/cp -f /usr/local/freeswitch/conf/directory/default/1000.xml.bak /usr/local/freeswitch/conf/directory/default/$i.xml; 
+	sed -i "s/1000/$i/g" $i.xml; 
+	password=$(($RANDOM % 10))$(($RANDOM % 10))$(($RANDOM % 10))$(($RANDOM % 10))$(($RANDOM % 10))$(($RANDOM % 10))
+	sed -i 's/\(name="password" value="\)[^"]*/\1'$password'/g' $i.xml
+	echo "账号:"$i" -> 密码:"$password 
 done
+
+
 ```
+
+
+
 
 
 # 网关配置相关（杭州三汇网关）
